@@ -424,6 +424,15 @@ Integrated latest fuel prices widget on the Owner dashboard and fixed missing fi
 **Overview:**
 - Documented fallback instructions referencing `backend/docs/LOCAL_DEV_SETUP.md` when Jest reports `unable to provision test DB`.
 
+### 🛠️ Fix 2026-07-15 – Reading meta fields
+
+**Status:** ✅ Done
+**Files:** `src/services/nozzleReading.service.ts`, `src/api/api-contract.ts`, `src/api/services/readingsService.ts`
+
+**Overview:**
+* Sales creation now stores `reading_id` for traceability.
+* Listing readings joins related tables so the frontend receives nozzle number and attendant name.
+* UI displays these values on the readings page.
 ### 🛠️ Fix 2026-07-15 – Pumps listing default
 
 **Status:** ✅ Done

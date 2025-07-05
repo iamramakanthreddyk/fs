@@ -285,6 +285,11 @@ All notable changes to this project will be documented in this file.
 ### Documentation
 - Added `STEP_fix_20260714_COMMAND.md` with instructions to rerun tests after initializing the database via `backend/docs/LOCAL_DEV_SETUP.md`.
 
+## [Fix 2026-07-15] - Readings page nozzle and user info
+
+### Changed
+- Backend now stores reading_id in sales and enriches `GET /nozzle-readings` with nozzleNumber and recordedBy.
+- Frontend maps these fields for display on the readings page.
 ## [Fix 2026-07-15] - Show all pumps by default
 
 ### Changed
