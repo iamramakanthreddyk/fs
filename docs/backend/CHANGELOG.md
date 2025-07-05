@@ -3160,3 +3160,10 @@ Each entry is tied to a step from the implementation index.
 
 ### 🟢 Enhancements
 - Added documentation step `STEP_fix_20260714_COMMAND.md` outlining database setup troubleshooting for tests.
+
+## [Fix 2026-07-15] – Sales listing details
+
+### 🟥 Fixes
+- `listSales` query now joins stations, pumps and nozzles to return station name, pump name and nozzle number.
+- Updated frontend mapping to handle `nozzle_number`.
+- Documented in `STEP_fix_20260715_COMMAND.md`.

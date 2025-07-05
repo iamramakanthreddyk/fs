@@ -279,3 +279,4 @@ This file tracks every build step taken by AI agents or developers. It maintains
 | fix | 2026-07-13 | Automated DB start for tests | ✅ Done | `backend/scripts/start-db-and-test.ts`, `backend/package.json` | `docs/STEP_fix_20260713_COMMAND.md` |
 | fix | 2026-07-13 | Shared API types & validation | ✅ Done | `shared/apiTypes.ts`, `backend/__tests__/integration/api-contract.test.ts`, `src/api/client.ts`, `src/api/fuel-inventory.ts` | `docs/STEP_fix_20260713_COMMAND.md` |
 | fix | 2026-07-14 | Test DB setup fallback | ✅ Done | `docs/STEP_fix_20260714_COMMAND.md` |
+| fix | 2026-07-15 | Sales list station data | ✅ Done | `src/services/sales.service.ts`, `src/api/sales.ts` | `docs/STEP_fix_20260715_COMMAND.md` |

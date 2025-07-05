@@ -284,3 +284,12 @@ All notable changes to this project will be documented in this file.
 
 ### Documentation
 - Added `STEP_fix_20260714_COMMAND.md` with instructions to rerun tests after initializing the database via `backend/docs/LOCAL_DEV_SETUP.md`.
+
+## [Fix 2026-07-15] - Sales list station data
+
+### Changed
+- `listSales` now joins station, pump and nozzle tables to include station and nozzle details.
+- `salesApi` maps `nozzle_number` to `nozzleName` for display.
+
+### Documentation
+- Logged step file `STEP_fix_20260715_COMMAND.md`.

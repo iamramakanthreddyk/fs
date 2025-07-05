@@ -423,3 +423,12 @@ Integrated latest fuel prices widget on the Owner dashboard and fixed missing fi
 
 **Overview:**
 - Documented fallback instructions referencing `backend/docs/LOCAL_DEV_SETUP.md` when Jest reports `unable to provision test DB`.
+
+### 🛠️ Fix 2026-07-15 – Sales list station data
+
+**Status:** ✅ Done
+**Files:** `src/services/sales.service.ts`, `src/api/sales.ts`, `docs/STEP_fix_20260715_COMMAND.md`
+
+**Overview:**
+- Recent sales API lacked station and nozzle info causing "Unknown" values in the UI.
+- Query now joins related tables and frontend mapping handles the new fields.
