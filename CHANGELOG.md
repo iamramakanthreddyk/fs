@@ -257,6 +257,16 @@ All notable changes to this project will be documented in this file.
 ### Documentation
 - Logged step file `STEP_audit_20260712_COMMAND.md`.
 
+## [2026-07-13] - Automated DB Start for Tests
+
+### Added
+- `start-db-and-test.ts` helper to ensure the dev database is running before Jest.
+
+### Changed
+- Backend `test` script now invokes this helper.
+
+### Documentation
+- Logged step file `STEP_fix_20260713_COMMAND.md`.
 ## [2026-07-13] - API contract module and validation
 
 ### Added
