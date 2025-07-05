@@ -334,3 +334,10 @@ All notable changes to this project will be documented in this file.
 - Replaced `useApiHook` with `useFetchData` and `useApiMutation` hooks.
 - Documentation now explains using a local PostgreSQL service when Docker is unavailable.
 - Documented in `STEP_fix_20260719_COMMAND.md`.
+## [Feature 2026-07-17] - Owner analytics dashboard
+
+### Added
+- Interactive analytics page with station comparison, advanced charts and ranking
+
+### Documentation
+- Logged step file `docs/backend/STEP_3_16_COMMAND.md`
