@@ -3166,4 +3166,10 @@ Each entry is tied to a step from the implementation index.
 ### 🟥 Fixes
 - `listSales` query now joins stations, pumps and nozzles to return station name, pump name and nozzle number.
 - Updated frontend mapping to handle `nozzle_number`.
+\n## [Fix 2026-07-15] – Reading detail and edit pages\n\n### 🟢 Enhancements\n- Added GET and PUT /nozzle-readings/{id} endpoints.\n- Added detail and edit pages in frontend.\n- Added React Query update hook.\n
+
+## [Fix 2026-07-15] – Pumps listing default
+
+### 🟢 Enhancements
+- `usePumps` hook now loads all pumps when no station is specified.
 - Documented in `STEP_fix_20260715_COMMAND.md`.
