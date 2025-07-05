@@ -423,6 +423,7 @@ Integrated latest fuel prices widget on the Owner dashboard and fixed missing fi
 
 **Overview:**
 - Documented fallback instructions referencing `backend/docs/LOCAL_DEV_SETUP.md` when Jest reports `unable to provision test DB`.
+\n### 🛠️ Fix 2026-07-15 – Reading Detail & Edit Pages\n\n**Status:** ✅ Done\n**Files:** `src/pages/dashboard/ReadingDetailPage.tsx`, `src/pages/dashboard/EditReadingPage.tsx`, `backend/src/routes/nozzleReading.route.ts`\n\n**Overview:**\n- Added backend handlers and routes for fetching and updating a single reading.\n- Added React Query update hook and pages to view and edit readings.\n
 
 ### 🛠️ Fix 2026-07-15 – Reading meta fields
 
