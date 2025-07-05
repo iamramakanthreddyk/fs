@@ -219,3 +219,31 @@ All notable changes to this project will be documented in this file.
 
 ### Documentation
 - Logged step file `STEP_fix_20260420_COMMAND.md`
+
+## [2026-07-09] - Automated API Testing Attempt
+
+### Added
+- `QA_API_TEST_REPORT_20260709.md` summarising results.
+
+### Documentation
+- Logged step file `STEP_fix_20260709_COMMAND.md`.
+
+## [2026-07-10] - Automated API Testing Attempt 2
+
+### Added
+- `QA_API_TEST_REPORT_20260710.md` with new testing attempt details.
+
+### Documentation
+- Logged step file `STEP_fix_20260710_COMMAND.md`.
+
+## [2026-07-11] - Automated API Testing Attempt 3
+
+### Added
+- `QA_API_TEST_REPORT_20260711.md` documenting latest test run.
+
+### Changed
+- Installed Jest and Supertest dev dependencies.
+- Updated backend test script to run Jest.
+
+### Documentation
+- Logged step file `STEP_fix_20260711_COMMAND.md`.
