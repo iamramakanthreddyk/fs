@@ -3141,3 +3141,16 @@ Each entry is tied to a step from the implementation index.
 - Removed outdated `docs/openapi/openapi.yaml`
 - Updated docs to reference `docs/openapi-spec.yaml`
 - Logged step file `STEP_fix_20260420_COMMAND.md`
+
+## [Fix 2026-07-13] – Shared API contract and tests
+
+### 🟢 Enhancements
+- Created `/shared/apiTypes.ts` module combining frontend contract and spec.
+- Added `api-contract.test.ts` to verify all routes.
+- Enabled zod based runtime validation in `apiClient` and applied to fuel inventory API.
+- Documented step file `STEP_fix_20260713_COMMAND.md`.
+
+## [Fix 2026-07-14] – Test DB setup fallback
+
+### 🟢 Enhancements
+- Added documentation step `STEP_fix_20260714_COMMAND.md` outlining database setup troubleshooting for tests.
