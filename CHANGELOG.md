@@ -312,3 +312,11 @@ All notable changes to this project will be documented in this file.
 
 ### Documentation
 - Logged step file `STEP_fix_20260716_COMMAND.md`.
+
+## [Feature 2026-07-17] - Owner analytics dashboard
+
+### Added
+- Interactive analytics page with station comparison, advanced charts and ranking
+
+### Documentation
+- Logged step file `docs/backend/STEP_3_16_COMMAND.md`
