@@ -395,3 +395,13 @@ Integrated latest fuel prices widget on the Owner dashboard and fixed missing fi
 - No missing integrations found; response shapes align.
 - Added automated integration tests to ensure documented GET endpoints respond.
 - Documented audit results in the new report.
+
+### 🛠️ Fix 2026-07-13 – Automated DB Start for Tests
+
+**Status:** ✅ Done
+**Files:** `backend/scripts/start-db-and-test.ts`, `backend/package.json`
+
+**Overview:**
+- Added helper script that starts the dev Postgres container when needed and waits for a successful connection.
+- Updated the backend `test` npm script to run this helper before executing Jest.
+- Updated local dev docs and phase summary accordingly.
