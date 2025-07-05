@@ -275,3 +275,4 @@ This file tracks every build step taken by AI agents or developers. It maintains
 | fix | 2026-07-09 | API route tests attempt | ✅ Done | `docs/QA_API_TEST_REPORT_20260709.md` | `docs/STEP_fix_20260709_COMMAND.md` |
 | fix | 2026-07-10 | API route tests attempt 2 | ✅ Done | `docs/QA_API_TEST_REPORT_20260710.md` | `docs/STEP_fix_20260710_COMMAND.md` |
 | fix | 2026-07-11 | API route tests attempt 3 | ✅ Done | `docs/QA_API_TEST_REPORT_20260711.md` | `docs/STEP_fix_20260711_COMMAND.md` |
+| audit | 2026-07-12 | Backend–frontend sync audit | ✅ Done | `docs/FRONTEND_BACKEND_SYNC_AUDIT_20260712.md`, `backend/__tests__/integration/openapiRoutes.test.ts` | `docs/STEP_audit_20260712_COMMAND.md` |
