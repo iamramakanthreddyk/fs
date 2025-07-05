@@ -1,0 +1,2 @@
+Project Context: FuelSync backend tests require a running Postgres container. Prior step 2026-07-12 performed a backend–frontend sync audit.
+Task: Create `backend/scripts/start-db-and-test.ts` to automatically start the dev database when it isn't running, wait until `check-db-connection.js` succeeds, then execute Jest. Update `backend/package.json` to run this script for `npm test`. Document the workflow in LOCAL_DEV_SETUP.md, PHASE_3_SUMMARY.md, CHANGELOGs and add the step to IMPLEMENTATION_INDEX.

@@ -3141,3 +3141,10 @@ Each entry is tied to a step from the implementation index.
 - Removed outdated `docs/openapi/openapi.yaml`
 - Updated docs to reference `docs/openapi-spec.yaml`
 - Logged step file `STEP_fix_20260420_COMMAND.md`
+
+## [Fix 2026-07-13] – Automated DB Start for Tests
+
+### 🟢 Enhancements
+- Added `start-db-and-test.ts` to start the dev database if needed and run Jest.
+- Updated `package.json` test script to use the helper.
+- Documented step file `STEP_fix_20260713_COMMAND.md`.
