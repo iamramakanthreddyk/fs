@@ -1,0 +1,4 @@
+Project Context Summary: The readings page lacks nozzle numbers and shows "RECORDED BY: UNKNOWN" because the backend endpoint `/v1/nozzle-readings` only returns basic fields. Previous fix 2026-07-14 documented test DB setup fallback. 
+Steps already implemented: Implementation index is up to 2026-07-14 with backend/frontend sync and shared API types.
+Task: Attach created readings to sales via `reading_id`, extend `listNozzleReadings` query to join pumps, stations and users so that each reading includes `nozzleNumber`, `pumpName`, `stationName` and `recordedBy` fields. Update frontend `ReadingReceiptCard` to display these values. Update CHANGELOG.md, backend/docs/CHANGELOG.md, backend/docs/IMPLEMENTATION_INDEX.md and backend/docs/PHASE_3_SUMMARY.md.
+Required documentation updates: CHANGELOG.md, backend/docs/CHANGELOG.md, backend/docs/IMPLEMENTATION_INDEX.md, backend/docs/PHASE_3_SUMMARY.md.
