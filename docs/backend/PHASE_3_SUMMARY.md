@@ -370,3 +370,17 @@ Integrated latest fuel prices widget on the Owner dashboard and fixed missing fi
 **Overview:**
 - Consolidated to `docs/openapi-spec.yaml`.
 - Updated codegen script and docs.
+\n### 🖼️ Step 3.15 – API Route Tests Attempt\n\n**Status:** ✅ Done\n**Files:** `docs/QA_API_TEST_REPORT_20260709.md`\n\n**Overview:**\n- Attempted to execute Jest + Supertest tests for all API routes.\n- Setup scripts failed due to missing Postgres and Jest package prompts.\n- Documented outcome in QA report.\n
+\n### 🛠️ Fix 2026-07-10 – API Route Tests Attempt 2\n\n**Status:** ✅ Done\n**Files:** `docs/QA_API_TEST_REPORT_20260710.md`\n\n**Overview:**\n- Installed PostgreSQL following LOCAL_DEV_SETUP.\n- `npm run setup-db` failed due to migration errors.\n- `npx jest -c backend/jest.config.ts` prompted to install Jest.\n- Documented outcome in QA report.\n
+
+### 🛠️ Fix 2026-07-11 – API Route Tests Attempt 3
+
+**Status:** ✅ Done
+**Files:** `docs/QA_API_TEST_REPORT_20260711.md`
+
+**Overview:**
+- Installed Jest and Supertest packages.
+- Updated backend test script to run Jest.
+- `npm run setup-db` failed with connection errors.
+- `npm test` skipped suites due to missing PostgreSQL.
+- Documented outcome in QA report.

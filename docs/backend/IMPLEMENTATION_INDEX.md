@@ -272,3 +272,6 @@ This file tracks every build step taken by AI agents or developers. It maintains
 | fix | 2026-01-02 | Sales overview metric fix | ✅ Done | `src/api/api-contract.ts`, `src/pages/dashboard/SalesOverviewPage.tsx`, `src/components/dashboard/*Chart.tsx`, `src/components/reports/SalesReportSummary.tsx` | `docs/STEP_fix_20260102_COMMAND.md` |
 | fix | 2026-01-02 | Dashboard analytics guard | ✅ Done | `src/hooks/useDashboard.ts`, `src/pages/dashboard/DashboardPage.tsx`, `src/pages/dashboard/FuelInventoryPage.tsx`, `src/components/inventory/InventoryStatusCard.tsx` | `docs/STEP_fix_20260102.md`
 | fix | 2026-04-20 | Spec cleanup | ✅ Done | `docs/openapi/openapi.yaml` removed, docs updated | `docs/STEP_fix_20260420_COMMAND.md` |
+| fix | 2026-07-09 | API route tests attempt | ✅ Done | `docs/QA_API_TEST_REPORT_20260709.md` | `docs/STEP_fix_20260709_COMMAND.md` |
+| fix | 2026-07-10 | API route tests attempt 2 | ✅ Done | `docs/QA_API_TEST_REPORT_20260710.md` | `docs/STEP_fix_20260710_COMMAND.md` |
+| fix | 2026-07-11 | API route tests attempt 3 | ✅ Done | `docs/QA_API_TEST_REPORT_20260711.md` | `docs/STEP_fix_20260711_COMMAND.md` |
