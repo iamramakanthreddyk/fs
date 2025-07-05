@@ -347,3 +347,10 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - Daily Reading Log cards now display pump name with nozzle number and show who recorded the reading.
 - Documented in `STEP_fix_20260720_COMMAND.md`.
+
+## [Fix 2026-07-21] - Pumps page shows all pumps
+
+### Changed
+- Removed station requirement in `PumpsPage` so `/dashboard/pumps` lists every pump.
+- Added "All Stations" option to the station dropdown and updated navigation handling.
+- Documented in `STEP_fix_20260721_COMMAND.md`.
