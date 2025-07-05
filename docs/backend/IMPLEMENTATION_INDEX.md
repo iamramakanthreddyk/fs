@@ -281,5 +281,8 @@ This file tracks every build step taken by AI agents or developers. It maintains
 | fix | 2026-07-14 | Test DB setup fallback | ✅ Done | `docs/STEP_fix_20260714_COMMAND.md` |
 | fix | 2026-07-15 | Pumps listing default | ✅ Done | `src/hooks/api/usePumps.ts` | `docs/STEP_fix_20260715_COMMAND.md` |
 | fix | 2026-07-16 | Cash report path fix | ✅ Done | `src/api/contract/attendant.service.ts` | `docs/STEP_fix_20260716_COMMAND.md` |
+| fix | 2026-07-17 | Report generation endpoint | ✅ Done | `src/api/services/reportsService.ts`, `src/hooks/api/useReports.ts` | `docs/STEP_fix_20260717_COMMAND.md` |
+| fix | 2026-07-18 | Install missing packages | ✅ Done | `package.json`, `backend/package.json` | `docs/STEP_fix_20260718_COMMAND.md` |
+| fix | 2026-07-19 | Lint cleanup and local DB docs | ✅ Done | `eslint.config.js`, `src/hooks/useApi.ts` | `docs/STEP_fix_20260719_COMMAND.md` |
 | fix | 2026-07-15 | Sales list station data | ✅ Done | `src/services/sales.service.ts`, `src/api/sales.ts` | `docs/STEP_fix_20260715_COMMAND.md` |
 | fix | 2026-07-15 | Reading meta fields | ✅ Done | `src/services/nozzleReading.service.ts`, `src/api/api-contract.ts`, `src/api/services/readingsService.ts` | `docs/STEP_fix_20260715_COMMAND.md` |

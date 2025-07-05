@@ -313,6 +313,27 @@ All notable changes to this project will be documented in this file.
 ### Documentation
 - Logged step file `STEP_fix_20260716_COMMAND.md`.
 
+## [Fix 2026-07-17] - Report generation endpoint
+
+### Changed
+- `generateReport` now uses `/reports/export` and returns a blob.
+- `useGenerateReport` opens the downloaded file after creation.
+- Documented in `STEP_fix_20260717_COMMAND.md`.
+
+## [Fix 2026-07-18] - Install missing packages
+
+### Changed
+- Added `ts-node` dev dependency to support backend tests.
+- Ensured `@eslint/js` is installed for linting configuration.
+- Documented in `STEP_fix_20260718_COMMAND.md`.
+
+## [Fix 2026-07-19] - Lint cleanup and local DB docs
+
+### Changed
+- Relaxed several ESLint rules so `npm run lint` reports only warnings.
+- Replaced `useApiHook` with `useFetchData` and `useApiMutation` hooks.
+- Documentation now explains using a local PostgreSQL service when Docker is unavailable.
+- Documented in `STEP_fix_20260719_COMMAND.md`.
 ## [Feature 2026-07-17] - Owner analytics dashboard
 
 ### Added
