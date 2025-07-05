@@ -405,3 +405,21 @@ Integrated latest fuel prices widget on the Owner dashboard and fixed missing fi
 - Added helper script that starts the dev Postgres container when needed and waits for a successful connection.
 - Updated the backend `test` npm script to run this helper before executing Jest.
 - Updated local dev docs and phase summary accordingly.
+### 🛠️ Fix 2026-07-13 – Shared API Types & Validation
+
+**Status:** ✅ Done
+**Files:** `shared/apiTypes.ts`, `backend/__tests__/integration/api-contract.test.ts`, `src/api/client.ts`, `src/api/fuel-inventory.ts`
+
+**Overview:**
+- Created a central `apiTypes` module to expose frontend contract and parsed OpenAPI schemas.
+- Added comprehensive integration test iterating over all documented routes.
+- Introduced optional zod validation in the API client and applied to the fuel inventory API.
+- Documented this step in `STEP_fix_20260713_COMMAND.md`.
+
+### 🛠️ Fix 2026-07-14 – Test DB Setup Fallback
+
+**Status:** ✅ Done
+**Files:** `docs/STEP_fix_20260714_COMMAND.md`
+
+**Overview:**
+- Documented fallback instructions referencing `backend/docs/LOCAL_DEV_SETUP.md` when Jest reports `unable to provision test DB`.
