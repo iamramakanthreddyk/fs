@@ -423,3 +423,12 @@ Integrated latest fuel prices widget on the Owner dashboard and fixed missing fi
 
 **Overview:**
 - Documented fallback instructions referencing `backend/docs/LOCAL_DEV_SETUP.md` when Jest reports `unable to provision test DB`.
+
+### 🛠️ Fix 2026-07-15 – Pumps listing default
+
+**Status:** ✅ Done
+**Files:** `src/hooks/api/usePumps.ts`
+
+**Overview:**
+- Pump listing hook now fetches all pumps when no station is selected, fixing sidebar "All Pumps" view.
+- Documented in `STEP_fix_20260715_COMMAND.md`.
