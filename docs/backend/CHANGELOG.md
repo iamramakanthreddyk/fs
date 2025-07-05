@@ -3160,3 +3160,9 @@ Each entry is tied to a step from the implementation index.
 
 ### 🟢 Enhancements
 - Added documentation step `STEP_fix_20260714_COMMAND.md` outlining database setup troubleshooting for tests.
+
+## [Fix 2026-07-15] – Pumps listing default
+
+### 🟢 Enhancements
+- `usePumps` hook now loads all pumps when no station is specified.
+- Documented in `STEP_fix_20260715_COMMAND.md`.

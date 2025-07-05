@@ -433,3 +433,11 @@ Integrated latest fuel prices widget on the Owner dashboard and fixed missing fi
 * Sales creation now stores `reading_id` for traceability.
 * Listing readings joins related tables so the frontend receives nozzle number and attendant name.
 * UI displays these values on the readings page.
+### 🛠️ Fix 2026-07-15 – Pumps listing default
+
+**Status:** ✅ Done
+**Files:** `src/hooks/api/usePumps.ts`
+
+**Overview:**
+- Pump listing hook now fetches all pumps when no station is selected, fixing sidebar "All Pumps" view.
+- Documented in `STEP_fix_20260715_COMMAND.md`.
