@@ -304,3 +304,11 @@ All notable changes to this project will be documented in this file.
 
 ### Documentation
 - Logged step file `STEP_fix_20260715_COMMAND.md`.
+
+## [Fix 2026-07-16] - Cash report submission path
+
+### Changed
+- `createCashReport` in `attendant.service.ts` now posts to `/attendant/cash-report`.
+
+### Documentation
+- Logged step file `STEP_fix_20260716_COMMAND.md`.

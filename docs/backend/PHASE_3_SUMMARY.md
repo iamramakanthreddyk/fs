@@ -451,3 +451,12 @@ Integrated latest fuel prices widget on the Owner dashboard and fixed missing fi
 **Overview:**
 - Pump listing hook now fetches all pumps when no station is selected, fixing sidebar "All Pumps" view.
 - Documented in `STEP_fix_20260715_COMMAND.md`.
+
+### 🛠️ Fix 2026-07-16 – Cash report submission path
+
+**Status:** ✅ Done
+**Files:** `src/api/contract/attendant.service.ts`
+
+**Overview:**
+- `createCashReport` now targets `/attendant/cash-report` to match backend routes.
+- Documented in `STEP_fix_20260716_COMMAND.md`.
