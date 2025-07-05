@@ -256,3 +256,16 @@ All notable changes to this project will be documented in this file.
 
 ### Documentation
 - Logged step file `STEP_audit_20260712_COMMAND.md`.
+
+## [2026-07-13] - API contract module and validation
+
+### Added
+- `shared/apiTypes.ts` providing unified types.
+- `api-contract.test.ts` exercising all documented endpoints.
+
+### Changed
+- Runtime response validation with zod in `apiClient`.
+- Example usage in `fuel-inventory` API module.
+
+### Documentation
+- Logged step file `STEP_fix_20260713_COMMAND.md`.

@@ -395,3 +395,14 @@ Integrated latest fuel prices widget on the Owner dashboard and fixed missing fi
 - No missing integrations found; response shapes align.
 - Added automated integration tests to ensure documented GET endpoints respond.
 - Documented audit results in the new report.
+
+### 🛠️ Fix 2026-07-13 – Shared API Types & Validation
+
+**Status:** ✅ Done
+**Files:** `shared/apiTypes.ts`, `backend/__tests__/integration/api-contract.test.ts`, `src/api/client.ts`, `src/api/fuel-inventory.ts`
+
+**Overview:**
+- Created a central `apiTypes` module to expose frontend contract and parsed OpenAPI schemas.
+- Added comprehensive integration test iterating over all documented routes.
+- Introduced optional zod validation in the API client and applied to the fuel inventory API.
+- Documented this step in `STEP_fix_20260713_COMMAND.md`.
