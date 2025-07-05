@@ -460,3 +460,15 @@ Integrated latest fuel prices widget on the Owner dashboard and fixed missing fi
 **Overview:**
 - `createCashReport` now targets `/attendant/cash-report` to match backend routes.
 - Documented in `STEP_fix_20260716_COMMAND.md`.
+
+### 🖼️ Step 3.16 – Owner Analytics Dashboard
+
+**Status:** ✅ Done
+**Files:** `src/pages/dashboard/AnalyticsPage.tsx`
+
+**Business Rules Covered:**
+- Owners and managers can view station comparison, advanced metrics and ranking
+
+**Validation Performed:**
+- Verified charts load data via analytics hooks
+- Tested station selector and ranking filters manually
