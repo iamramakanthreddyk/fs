@@ -3149,3 +3149,8 @@ Each entry is tied to a step from the implementation index.
 - Added `api-contract.test.ts` to verify all routes.
 - Enabled zod based runtime validation in `apiClient` and applied to fuel inventory API.
 - Documented step file `STEP_fix_20260713_COMMAND.md`.
+
+## [Fix 2026-07-14] – Test DB setup fallback
+
+### 🟢 Enhancements
+- Added documentation step `STEP_fix_20260714_COMMAND.md` outlining database setup troubleshooting for tests.

@@ -406,3 +406,11 @@ Integrated latest fuel prices widget on the Owner dashboard and fixed missing fi
 - Added comprehensive integration test iterating over all documented routes.
 - Introduced optional zod validation in the API client and applied to the fuel inventory API.
 - Documented this step in `STEP_fix_20260713_COMMAND.md`.
+
+### 🛠️ Fix 2026-07-14 – Test DB Setup Fallback
+
+**Status:** ✅ Done
+**Files:** `docs/STEP_fix_20260714_COMMAND.md`
+
+**Overview:**
+- Documented fallback instructions referencing `backend/docs/LOCAL_DEV_SETUP.md` when Jest reports `unable to provision test DB`.

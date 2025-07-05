@@ -249,3 +249,4 @@ This file tracks every build step taken by AI agents or developers. It maintains
 | fix | 2025-12-20 | Apply documented Prisma price helper | ✅ Done | `src/utils/priceUtils.ts`, `src/services/attendant.service.ts`, `src/services/nozzleReading.service.ts`, `README.md` | `docs/STEP_fix_20251220.md` |
 | audit | 2026-07-12 | Backend–frontend sync audit | ✅ Done | `docs/FRONTEND_BACKEND_SYNC_AUDIT_20260712.md`, `backend/__tests__/integration/openapiRoutes.test.ts` | `docs/STEP_audit_20260712_COMMAND.md` |
 | fix | 2026-07-13 | Shared API types & validation | ✅ Done | `shared/apiTypes.ts`, `backend/__tests__/integration/api-contract.test.ts`, `src/api/client.ts`, `src/api/fuel-inventory.ts` | `docs/STEP_fix_20260713_COMMAND.md` |
+| fix | 2026-07-14 | Test DB setup fallback | ✅ Done | `docs/STEP_fix_20260714_COMMAND.md` |
