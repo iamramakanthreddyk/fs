@@ -503,3 +503,13 @@ Integrated latest fuel prices widget on the Owner dashboard and fixed missing fi
 **Validation Performed:**
 - Verified charts load data via analytics hooks
 - Tested station selector and ranking filters manually
+
+### 🛠️ Fix 2026-07-20 – Reading card metadata
+
+**Status:** ✅ Done
+**Files:** `src/components/readings/ReadingReceiptCard.tsx`
+
+**Overview:**
+- Daily log cards now show pump name together with the nozzle number.
+- Attendant name appears under the station title for clarity.
+- Documented in `STEP_fix_20260720_COMMAND.md`.
