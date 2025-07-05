@@ -321,6 +321,8 @@ Each entry is tied to a step from the implementation index.
 * Added `docker-compose.yml` for local Postgres
 * Created `.env.development` with standard credentials
 * Seed and validation scripts now load env vars per `NODE_ENV`
+* Docs now mention that developers may run a local PostgreSQL service instead of
+  Docker Compose.
 
 ### Files
 
@@ -3173,3 +3175,16 @@ Each entry is tied to a step from the implementation index.
 ### 🟢 Enhancements
 - `usePumps` hook now loads all pumps when no station is specified.
 - Documented in `STEP_fix_20260715_COMMAND.md`.
+
+## [Fix 2026-07-17] – Report generation endpoint
+
+### 🟥 Fixes
+- `reportsService.generateReport` now targets `/reports/export` with proper parameters.
+- Hook `useGenerateReport` opens the returned file blob.
+- Logged in `STEP_fix_20260717_COMMAND.md`.
+
+## [Fix 2026-07-18] – Install missing packages
+
+### 🟥 Fixes
+- Added `ts-node` and `@eslint/js` to ensure linting and tests run.
+- Documented in `STEP_fix_20260718_COMMAND.md`.
