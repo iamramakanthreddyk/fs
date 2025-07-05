@@ -384,3 +384,14 @@ Integrated latest fuel prices widget on the Owner dashboard and fixed missing fi
 - `npm run setup-db` failed with connection errors.
 - `npm test` skipped suites due to missing PostgreSQL.
 - Documented outcome in QA report.
+
+### 🛠️ Fix 2026-07-12 – Backend–Frontend Sync Audit
+
+**Status:** ✅ Done
+**Files:** `docs/FRONTEND_BACKEND_SYNC_AUDIT_20260712.md`, `backend/__tests__/integration/openapiRoutes.test.ts`
+
+**Overview:**
+- Reviewed API modules against backend routes and OpenAPI spec.
+- No missing integrations found; response shapes align.
+- Added automated integration tests to ensure documented GET endpoints respond.
+- Documented audit results in the new report.

@@ -247,3 +247,12 @@ All notable changes to this project will be documented in this file.
 
 ### Documentation
 - Logged step file `STEP_fix_20260711_COMMAND.md`.
+
+## [2026-07-12] - Backend–Frontend Sync Audit
+
+### Added
+- `FRONTEND_BACKEND_SYNC_AUDIT_20260712.md` summarising API usage and gaps.
+- `openapiRoutes.test.ts` integration tests auto-generated from OpenAPI spec.
+
+### Documentation
+- Logged step file `STEP_audit_20260712_COMMAND.md`.
