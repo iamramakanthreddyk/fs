@@ -200,3 +200,47 @@ export async function canCreateNozzleReading(
 
   return { allowed: true } as const;
 }
+
+export async function getNozzleReading(db: Pool, tenantId: string, id: string) {
+  const res = await db.query(
+    `SELECT id, nozzle_id, reading, recorded_at, payment_method, creditor_id
+       FROM public.nozzle_readings
+      WHERE id = $1 AND tenant_id = $2`,
+    [id, tenantId]
+  );
+  return res.rows[0] || null;
+}
+
+export async function updateNozzleReading(
+  db: Pool,
+  tenantId: string,
+  id: string,
+  data: Partial<NozzleReadingInput>
+) {
+  const fields: string[] = [];
+  const values: any[] = [id, tenantId];
+  let idx = 3;
+  if (data.reading !== undefined) {
+    fields.push(`reading = $${idx++}`);
+    values.push(data.reading);
+  }
+  if (data.recordedAt !== undefined) {
+    fields.push(`recorded_at = $${idx++}`);
+    values.push(data.recordedAt);
+  }
+  if (data.paymentMethod) {
+    fields.push(`payment_method = $${idx++}`);
+    values.push(data.paymentMethod);
+  }
+  if (data.creditorId !== undefined) {
+    fields.push(`creditor_id = $${idx++}`);
+    values.push(data.creditorId);
+  }
+  if (fields.length === 0) {
+    return null;
+  }
+  const sql = `UPDATE public.nozzle_readings SET ${fields.join(", ")}, updated_at = NOW()
+               WHERE id = $1 AND tenant_id = $2 RETURNING id`;
+  const res = await db.query<{ id: string }>(sql, values);
+  return res.rowCount ? res.rows[0].id : null;
+}

@@ -37,6 +37,13 @@ export interface CreateReadingRequest {
   creditorId?: string;
 }
 
+export interface UpdateReadingRequest {
+  reading?: number;
+  recordedAt?: string;
+  paymentMethod?: 'cash' | 'card' | 'upi' | 'credit';
+  creditorId?: string | null;
+}
+
 /**
  * Service for readings API
  */
@@ -131,6 +138,26 @@ export const readingsService = {
       return extractData<Reading>(response);
     } catch (error) {
       console.error('[READINGS-API] Error creating reading:', error);
+      throw error;
+    }
+  },
+
+  /**
+   * Update an existing reading
+   */
+  updateReading: async (
+    id: string,
+    data: UpdateReadingRequest
+  ): Promise<Reading> => {
+    try {
+      console.log(`[READINGS-API] Updating reading ${id} with data:`, data);
+      const response = await apiClient.put(
+        `${API_CONFIG.endpoints.readings.base}/${id}`,
+        data
+      );
+      return extractData<Reading>(response);
+    } catch (error) {
+      console.error(`[READINGS-API] Error updating reading ${id}:`, error);
       throw error;
     }
   },
