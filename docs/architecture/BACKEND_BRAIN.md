@@ -235,7 +235,7 @@ const users = await prisma.user.findMany({ where: { tenant_id } });
 | GET | /schemas | app.ts | n/a |
 
 ### OpenAPI Audit 2025-07-24
-All routes defined in the Express app and route modules were parsed and compared to `docs/openapi.yaml`. The list matched exactly (97 paths). Test utilities `/test`, `/test-login`, `/health`, and `/schemas` remain documented. The spec currently only lists endpoints without request/response schemas, so there are no detected shape mismatches. Future improvements should flesh out those schemas for accurate contract validation.
+All routes defined in the Express app and route modules were parsed and compared to `docs/openapi-spec.yaml`. The list matched exactly (97 paths). Test utilities `/test`, `/test-login`, `/health`, and `/schemas` remain documented. The spec currently only lists endpoints without request/response schemas, so there are no detected shape mismatches. Future improvements should flesh out those schemas for accurate contract validation.
 
 ### OpenAPI Contract Drift 2025-07-25
 The old spec contained 41 endpoint definitions while the refreshed spec now lists 67.
@@ -276,7 +276,7 @@ The spec now defines request bodies and success/error responses for every endpoi
 
 ## Best Practices for Contract Evolution
 
-- **OpenAPI as Source of Truth:** The spec in `docs/openapi.yaml` defines the canonical API. Whenever any endpoint is added or changed, update this file first.
+- **OpenAPI as Source of Truth:** The spec in `docs/openapi-spec.yaml` defines the canonical API. Whenever any endpoint is added or changed, update this file first.
 - **Keep backend_brain.md in Sync:** After modifying the spec or code, update the endpoint table above with the exact method and path. Document request and response shapes or examples as they evolve.
 - **Run `node merge-api-docs.js`:** Execute the comparison script to detect endpoints missing from either document. Resolve discrepancies before merging a pull request.
 - **Define Schemas for Every Operation:** Each path in the spec must include `requestBody` and `responses` schemas. Use the shared `ErrorResponse` component for failures.
@@ -286,7 +286,7 @@ The spec now defines request bodies and success/error responses for every endpoi
 - **Incremental, Reviewed Changes:** Prefer small, well-described API updates. Review contract changes regularly to ensure frontend, backend, and AI assistants remain aligned.
 
 ### Workflow
-1. Edit the code and update `docs/openapi.yaml` for any API change.
+1. Edit the code and update `docs/openapi-spec.yaml` for any API change.
 2. Update the endpoint table and relevant notes in `backend_brain.md`.
 3. Run `node merge-api-docs.js` to check for drift.
 4. Address any missing or extra endpoints reported by the script.

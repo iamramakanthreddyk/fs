@@ -210,3 +210,12 @@ All notable changes to this project will be documented in this file.
 
 ### Documentation
 - Logged step file `STEP_fix_20260102.md`
+
+## [2026-04-20] - Spec cleanup
+
+### Fixed
+- Removed outdated `docs/openapi/openapi.yaml`
+- Updated docs to reference `docs/openapi-spec.yaml`
+
+### Documentation
+- Logged step file `STEP_fix_20260420_COMMAND.md`

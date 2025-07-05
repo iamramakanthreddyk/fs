@@ -154,7 +154,7 @@ A new file `frontend/docs/openapi-v1.yaml` captures the full API contract expect
 
 ### 📄 Documentation Addendum – 2025-11-05
 
-The canonical API specification now resides in `docs/openapi.yaml`.
+The canonical API specification now resides in `docs/openapi-spec.yaml`.
 Refer to `FRONTEND_REFERENCE_GUIDE.md` for the full update flow and spec link.
 The older `frontend/docs/openapi-v1.yaml` is kept only for historical reference.
 
@@ -362,3 +362,11 @@ Integrated latest fuel prices widget on the Owner dashboard and fixed missing fi
 **Overview:**
 - Prevented owners from calling superadmin analytics endpoints by adding role-based hook guards.
 - Fuel inventory numbers default to zero when missing to avoid formatting errors.
+
+### 🛠️ Fix 2026-04-20 – Spec cleanup
+**Status:** ✅ Done
+**Files:** `docs/openapi/openapi.yaml` (removed), `docs/*`
+
+**Overview:**
+- Consolidated to `docs/openapi-spec.yaml`.
+- Updated codegen script and docs.

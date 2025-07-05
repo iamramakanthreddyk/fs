@@ -10,7 +10,7 @@ This report summarises the final quality assurance audit for FuelSync Hub.
 
 ## Scope
 
-The audit verified that the backend endpoints documented in `docs/openapi.yaml` are implemented and that the React Query hooks invoke the correct paths. Core flows such as readings ➜ sales, reconciliation, inventory alerts and dashboard metrics were tested in the demo environment.
+The audit verified that the backend endpoints documented in `docs/openapi-spec.yaml` are implemented and that the React Query hooks invoke the correct paths. Core flows such as readings ➜ sales, reconciliation, inventory alerts and dashboard metrics were tested in the demo environment.
 
 ## Findings
 
