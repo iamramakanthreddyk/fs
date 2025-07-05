@@ -75,7 +75,29 @@ export const readingsService = {
       } else {
         readingsArray = extractArray<Reading>(response, 'readings');
       }
-      
+
+      readingsArray = readingsArray.map((r: any) => ({
+        id: r.id,
+        nozzleId: r.nozzleId || r.nozzle_id,
+        nozzleNumber: r.nozzleNumber ?? r.nozzle_number,
+        pumpName: r.pumpName || r.pump_name,
+        stationId: r.stationId || r.station_id,
+        stationName: r.stationName || r.station_name,
+        reading: r.reading,
+        previousReading: r.previousReading ?? r.previous_reading,
+        recordedAt: r.recordedAt || r.recorded_at,
+        paymentMethod: r.paymentMethod || r.payment_method,
+        creditorId: r.creditorId || r.creditor_id,
+        creditorName: r.creditorName || r.creditor_name,
+        createdAt: r.createdAt || r.created_at,
+        recordedBy: r.recordedBy || r.recorded_by || r.attendantName || r.attendant_name,
+        status: r.status,
+        volume: r.volume,
+        amount: r.amount,
+        pricePerLitre: r.pricePerLitre || r.price_per_litre,
+        fuelType: r.fuelType || r.fuel_type
+      }));
+
       console.log(`[READINGS-API] Successfully fetched ${readingsArray.length} readings`);
       return readingsArray;
     } catch (error) {
