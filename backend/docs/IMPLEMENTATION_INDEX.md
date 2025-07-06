@@ -256,3 +256,5 @@ This file tracks every build step taken by AI agents or developers. It maintains
 | 3     | 3.16 | Owner analytics dashboard | ✅ Done | `src/pages/dashboard/AnalyticsPage.tsx` | `PHASE_3_SUMMARY.md#step-3.16` |
 | fix | 2026-07-16 | Azure deployment docs | ✅ Done | `docs/AZURE_DEPLOYMENT_GUIDE.md`, `docs/AZURE_DEV_SETUP.md`, `README.md` | `docs/STEP_fix_20260716_COMMAND.md` |
 | fix | 2026-07-17 | Dashboard station access | ✅ Done | `src/controllers/dashboard.controller.ts`, `tests/dashboard.controller.test.ts` | `docs/STEP_fix_20260717_COMMAND.md` |
+| fix | 2026-07-18 | Fuel price effective dates | ✅ Done | `backend/src/validators/fuelPrice.validator.ts`, `backend/src/controllers/fuelPrice.controller.ts`, `backend/src/services/fuelPrice.service.ts`, `src/api/api-contract.ts` | `docs/STEP_fix_20260718_COMMAND.md` |
+| fix | 2026-07-19 | Fuel price range override | ✅ Done | `backend/src/controllers/fuelPrice.controller.ts`, `backend/src/services/fuelPrice.service.ts` | `docs/STEP_fix_20260719_COMMAND.md` |
