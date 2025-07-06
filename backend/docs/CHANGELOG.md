@@ -3078,3 +3078,25 @@ Each entry is tied to a step from the implementation index.
 * `backend/src/controllers/fuelPrice.controller.ts`
 * `backend/src/services/fuelPrice.service.ts`
 * `docs/STEP_fix_20260719_COMMAND.md`
+
+
+## [Fix 2026-07-23] – Attendant pages use role APIs
+
+### 🟥 Fixes
+* Switched station, pump, nozzle and creditor lookups to `/attendant/*` routes when role is `attendant`.
+* `AttendantDashboardPage`, `CashReportPage`, `CashReportsListPage` and `NewReadingPage` updated.
+* `docs/STEP_fix_20260723_COMMAND.md`
+
+## [Fix 2026-07-24] – Clarify attendant API limits
+
+### 🟦 Documentation
+* Updated `docs/journeys/ATTENDANT.md` with notes about missing reading and price listing APIs.
+* Added explanation of stubbed attendance/shifts endpoints.
+* `docs/STEP_fix_20260724_COMMAND.md`
+
+## [Fix 2026-07-25] – Disable restricted attendant requests
+
+### 🟥 Fixes
+* Attendant dashboard and new reading pages no longer hit owner-only endpoints.
+* Updated attendant journey documentation.
+* `docs/STEP_fix_20260725_COMMAND.md`
