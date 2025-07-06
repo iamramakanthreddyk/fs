@@ -1373,3 +1373,10 @@ sudo apt-get update && sudo apt-get install -y postgresql
 
 **Overview:**
 * When creating a new fuel price, any open range for the same station and fuel type is automatically closed by setting its `effective_to` to the new `valid_from`.
+
+### 🛠️ Fix 2026-07-22 – Fuel price service tests
+**Status:** ✅ Done
+**Files:** `backend/tests/fuelPrice.service.test.ts`, `docs/STEP_fix_20260722_COMMAND.md`
+
+**Overview:**
+* Added unit tests to ensure overlapping ranges throw errors and open ranges are closed when a new price is created.

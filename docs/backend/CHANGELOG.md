@@ -3210,3 +3210,9 @@ Each entry is tied to a step from the implementation index.
 - `PumpsPage` no longer requires a station; selecting **All Pumps** now lists every pump.
 - Added an "All Stations" option to the dropdown filter.
 - Documented in `STEP_fix_20260721_COMMAND.md`.
+
+## [Fix 2026-07-22] – Fuel price service tests
+
+### 🟥 Fixes
+- Added unit tests verifying fuel price overlap errors and automatic closure of open ranges.
+- Documented in `STEP_fix_20260722_COMMAND.md`.
