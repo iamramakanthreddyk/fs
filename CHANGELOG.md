@@ -355,6 +355,10 @@ All notable changes to this project will be documented in this file.
 - Added "All Stations" option to the station dropdown and updated navigation handling.
 - Documented in `STEP_fix_20260721_COMMAND.md`.
 
+## [Fix 2026-07-22] - Fuel price service tests
+
+### Added
+- Unit tests for fuel price creation covering overlapping ranges and open range closure.
 ## [Fix 2026-07-22] - Remove duplicate backend brain doc
 
 ### Changed

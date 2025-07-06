@@ -258,3 +258,4 @@ This file tracks every build step taken by AI agents or developers. It maintains
 | fix | 2026-07-17 | Dashboard station access | ✅ Done | `src/controllers/dashboard.controller.ts`, `tests/dashboard.controller.test.ts` | `docs/STEP_fix_20260717_COMMAND.md` |
 | fix | 2026-07-18 | Fuel price effective dates | ✅ Done | `backend/src/validators/fuelPrice.validator.ts`, `backend/src/controllers/fuelPrice.controller.ts`, `backend/src/services/fuelPrice.service.ts`, `src/api/api-contract.ts` | `docs/STEP_fix_20260718_COMMAND.md` |
 | fix | 2026-07-19 | Fuel price range override | ✅ Done | `backend/src/controllers/fuelPrice.controller.ts`, `backend/src/services/fuelPrice.service.ts` | `docs/STEP_fix_20260719_COMMAND.md` |
+| fix | 2026-07-22 | Fuel price service tests | ✅ Done | `backend/tests/fuelPrice.service.test.ts` | `docs/STEP_fix_20260722_COMMAND.md` |

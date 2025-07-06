@@ -3211,6 +3211,10 @@ Each entry is tied to a step from the implementation index.
 - Added an "All Stations" option to the dropdown filter.
 - Documented in `STEP_fix_20260721_COMMAND.md`.
 
+## [Fix 2026-07-22] – Fuel price service tests
+
+### 🟥 Fixes
+- Added unit tests verifying fuel price overlap errors and automatic closure of open ranges.
 ## [Fix 2026-07-22] – Remove duplicate backend brain doc
 
 ### 🟥 Fixes
