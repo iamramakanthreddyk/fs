@@ -111,12 +111,12 @@ Each step includes:
 
 * Price must be greater than zero
 * No overlapping time range per station and fuel type
-* Open range is closed when new price is added
+* New price creation closes any existing open range or rejects the record if dates overlap
 
 **Validation Performed:**
 
-* Input fields checked in validator
-* Overlap check enforced in service
+* `validateCreateFuelPrice` defaults `validFrom` to now and accepts an optional `effectiveTo` that must be later
+* Service logic closes open ranges or throws on conflicting dates
 
 ---
 
