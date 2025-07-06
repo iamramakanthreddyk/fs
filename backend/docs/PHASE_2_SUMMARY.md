@@ -1358,3 +1358,18 @@ sudo apt-get update && sudo apt-get install -y postgresql
 * Added `user_stations` check to all dashboard endpoints with `stationId`.
 * Handlers return a 403 response when the user lacks access.
 * Added unit tests for the new validation logic.
+
+### 🛠️ Fix 2026-07-18 – Fuel price effective dates
+**Status:** ✅ Done
+**Files:** `backend/src/validators/fuelPrice.validator.ts`, `backend/src/controllers/fuelPrice.controller.ts`, `backend/src/services/fuelPrice.service.ts`, `src/api/api-contract.ts`, `docs/STEP_fix_20260718_COMMAND.md`
+
+**Overview:**
+* `validFrom` in fuel price creation is now optional and defaults to the current timestamp.
+* `effectiveTo` may be supplied and must be later than `validFrom`.
+
+### 🛠️ Fix 2026-07-19 – Fuel price range override
+**Status:** ✅ Done
+**Files:** `backend/src/controllers/fuelPrice.controller.ts`, `backend/src/services/fuelPrice.service.ts`, `docs/STEP_fix_20260719_COMMAND.md`
+
+**Overview:**
+* When creating a new fuel price, any open range for the same station and fuel type is automatically closed by setting its `effective_to` to the new `valid_from`.

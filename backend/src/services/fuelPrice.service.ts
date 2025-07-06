@@ -9,37 +9,20 @@ export async function createFuelPrice(db: Pool, tenantId: string, input: FuelPri
     await client.query('BEGIN');
     const validFrom = input.validFrom || new Date();
 
-    const overlapRes = await client.query<{ id: string; effective_to: Date | null }>(
-      `SELECT id, effective_to, valid_from
-         FROM public.fuel_prices
-        WHERE station_id = $1
-          AND fuel_type = $2
-          AND tenant_id = $3
-          AND (effective_to IS NULL OR effective_to >= $4)`,
-      [input.stationId, input.fuelType, tenantId, validFrom]
+    await client.query(
+      `UPDATE public.fuel_prices
+         SET effective_to = $1, updated_at = NOW()
+       WHERE tenant_id = $2
+         AND station_id = $3
+         AND fuel_type = $4
+         AND effective_to IS NULL`,
+      [validFrom, tenantId, input.stationId, input.fuelType]
     );
 
-    let openId: string | null = null;
-    for (const row of overlapRes.rows) {
-      if (row.effective_to === null) {
-        if (openId) {
-          throw new Error('Multiple open fuel price ranges found');
-        }
-        openId = row.id;
-      } else {
-        throw new Error('Overlapping fuel price range exists');
-      }
-    }
-
-    if (openId) {
-      const end = new Date(validFrom.getTime() - 1000);
-      await client.query('UPDATE public.fuel_prices SET effective_to = $1, updated_at = NOW() WHERE id = $2', [end, openId]);
-    }
-
     const res = await client.query<{ id: string }>(
-      `INSERT INTO public.fuel_prices (id, tenant_id, station_id, fuel_type, price, valid_from, updated_at)
-       VALUES ($1,$2,$3,$4,$5,$6,NOW()) RETURNING id`,
-      [randomUUID(), tenantId, input.stationId, input.fuelType, input.price, validFrom]
+      `INSERT INTO public.fuel_prices (id, tenant_id, station_id, fuel_type, price, valid_from, effective_to, updated_at)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,NOW()) RETURNING id`,
+      [randomUUID(), tenantId, input.stationId, input.fuelType, input.price, validFrom, input.effectiveTo]
     );
     await client.query('COMMIT');
     return res.rows[0].id;
@@ -53,8 +36,8 @@ export async function createFuelPrice(db: Pool, tenantId: string, input: FuelPri
 
 export async function updateFuelPrice(db: Pool, tenantId: string, id: string, input: FuelPriceInput): Promise<void> {
   await db.query(
-    'UPDATE public.fuel_prices SET station_id = $2, fuel_type = $3, price = $4, valid_from = $5 WHERE id = $1 AND tenant_id = $6',
-    [id, input.stationId, input.fuelType, input.price, input.validFrom, tenantId]
+    'UPDATE public.fuel_prices SET station_id = $2, fuel_type = $3, price = $4, valid_from = $5, effective_to = $6 WHERE id = $1 AND tenant_id = $7',
+    [id, input.stationId, input.fuelType, input.price, input.validFrom, input.effectiveTo, tenantId]
   );
 }
 
@@ -77,7 +60,7 @@ export async function listFuelPrices(db: Pool, tenantId: string, query: FuelPric
   conds.push(`tenant_id = $${idx++}`);
   params.push(tenantId);
   const where = conds.length ? `WHERE ${conds.join(' AND ')}` : '';
-  const sql = `SELECT id, station_id, fuel_type, price, valid_from, created_at
+  const sql = `SELECT id, station_id, fuel_type, price, valid_from, effective_to, created_at
                FROM public.fuel_prices
                ${where}
                ORDER BY valid_from DESC`;
