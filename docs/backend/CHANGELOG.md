@@ -3217,3 +3217,9 @@ Each entry is tied to a step from the implementation index.
 - Deleted duplicate architecture file `docs/architecture/BACKEND_BRAIN.md`.
 - Updated architecture README link to `backend_brain.md`.
 - Documented in `STEP_fix_20260722_COMMAND.md`.
+
+## [Fix 2026-07-23] – Attendant role endpoints
+
+### 🟥 Fixes
+- Updated frontend pages to use attendant-specific hooks when role is attendant.
+- Documented in `STEP_fix_20260723_COMMAND.md`.
