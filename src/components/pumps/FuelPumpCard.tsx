@@ -1,7 +1,7 @@
 
 /**
  * @file components/pumps/FuelPumpCard.tsx
- * @description Creative fuel pump card with dark mode support and modern design
+ * @description Creative fuel pump card with white theme and enhanced readability
  */
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -36,74 +36,110 @@ interface FuelPumpCardProps {
 }
 
 export function FuelPumpCard({ pump, onViewNozzles, onDelete, needsAttention }: FuelPumpCardProps) {
+  // Get card variant based on pump ID for visual variety
+  const getCardVariant = (id: string) => {
+    const variants = [
+      {
+        name: 'primary',
+        bg: 'from-blue-50 via-indigo-50 to-blue-50',
+        border: 'border-blue-200',
+        glow: 'hover:ring-2 hover:ring-blue-300/50 hover:shadow-blue-200/40'
+      },
+      {
+        name: 'secondary', 
+        bg: 'from-teal-50 via-cyan-50 to-teal-50',
+        border: 'border-teal-200',
+        glow: 'hover:ring-2 hover:ring-teal-300/50 hover:shadow-teal-200/40'
+      },
+      {
+        name: 'highlight',
+        bg: 'from-purple-50 via-indigo-50 to-purple-50', 
+        border: 'border-purple-200',
+        glow: 'hover:ring-2 hover:ring-purple-300/50 hover:shadow-purple-200/40'
+      }
+    ];
+    const hash = id.split('').reduce((a, b) => a + b.charCodeAt(0), 0);
+    return variants[hash % variants.length];
+  };
+
   const getStatusConfig = () => {
     switch (pump.status) {
       case 'active':
         return {
-          gradient: 'from-emerald-400 via-green-500 to-teal-600',
-          glowColor: 'shadow-emerald-500/30',
+          gradient: 'from-emerald-500 via-green-600 to-teal-700',
+          glowColor: 'shadow-emerald-200/60',
           icon: CheckCircle,
           label: 'Active',
-          iconColor: 'text-emerald-400',
-          bgColor: 'bg-emerald-500/30 border-emerald-500/50'
+          iconColor: 'text-emerald-600',
+          bgColor: 'bg-emerald-100/80 border-emerald-300/60 ring-emerald-300/30',
+          textColor: 'text-emerald-700'
         };
       case 'maintenance':
         return {
-          gradient: 'from-amber-400 via-orange-500 to-red-500',
-          glowColor: 'shadow-amber-500/30',
+          gradient: 'from-amber-500 via-orange-600 to-red-600',
+          glowColor: 'shadow-amber-200/60',
           icon: Settings2,
           label: 'Maintenance',
-          iconColor: 'text-amber-400',
-          bgColor: 'bg-amber-500/30 border-amber-500/50'
+          iconColor: 'text-amber-600',
+          bgColor: 'bg-amber-100/80 border-amber-300/60 ring-amber-300/30',
+          textColor: 'text-amber-700'
         };
       case 'inactive':
         return {
-          gradient: 'from-red-400 via-pink-500 to-rose-500',
-          glowColor: 'shadow-red-500/30',
+          gradient: 'from-red-500 via-pink-600 to-rose-600',
+          glowColor: 'shadow-red-200/60',
           icon: AlertTriangle,
           label: 'Inactive',
-          iconColor: 'text-red-400',
-          bgColor: 'bg-red-500/30 border-red-500/50'
+          iconColor: 'text-red-600',
+          bgColor: 'bg-red-100/80 border-red-300/60 ring-red-300/30',
+          textColor: 'text-red-700'
         };
       default:
         return {
-          gradient: 'from-gray-400 via-slate-500 to-zinc-500',
-          glowColor: 'shadow-gray-500/30',
+          gradient: 'from-gray-500 via-slate-600 to-zinc-600',
+          glowColor: 'shadow-gray-200/60',
           icon: AlertTriangle,
           label: 'Unknown',
-          iconColor: 'text-gray-400',
-          bgColor: 'bg-gray-500/30 border-gray-500/50'
+          iconColor: 'text-gray-600',
+          bgColor: 'bg-gray-100/80 border-gray-300/60 ring-gray-300/30',
+          textColor: 'text-gray-700'
         };
     }
   };
 
+  const cardVariant = getCardVariant(pump.id);
   const statusConfig = getStatusConfig();
   const StatusIcon = statusConfig.icon;
 
   return (
     <div className={cn(
-      "group relative overflow-hidden rounded-3xl border backdrop-blur-xl transition-all duration-500 hover:scale-[1.02]",
-      "bg-slate-800/80 dark:bg-slate-900/80 border-slate-600/30 dark:border-slate-700/30",
-      "shadow-2xl hover:shadow-3xl",
+      "group relative overflow-hidden rounded-3xl border backdrop-blur-xl transition-all duration-500 hover:scale-[1.02] bg-white/90",
+      `bg-gradient-to-br ${cardVariant.bg}`,
+      cardVariant.border,
+      cardVariant.glow,
+      "shadow-xl hover:shadow-2xl",
       statusConfig.glowColor,
-      needsAttention && "ring-2 ring-amber-400/50 ring-offset-2 ring-offset-transparent"
+      needsAttention && "ring-2 ring-amber-400/60 ring-offset-2 ring-offset-transparent animate-pulse"
     )}>
       {/* Animated Background */}
       <div className={cn(
-        "absolute inset-0 bg-gradient-to-br opacity-10 group-hover:opacity-20 transition-opacity duration-500",
+        "absolute inset-0 bg-gradient-to-br opacity-5 group-hover:opacity-15 transition-opacity duration-500",
         statusConfig.gradient
       )}></div>
 
       {/* Attention Badge */}
       {needsAttention && (
-        <div className="absolute -top-2 -right-2 bg-amber-500 text-amber-900 rounded-full p-2 shadow-lg shadow-amber-500/50 animate-pulse">
+        <div className="absolute -top-2 -right-2 bg-amber-500 text-white rounded-full p-2 shadow-lg shadow-amber-300/50 animate-bounce">
           <AlertTriangle className="h-4 w-4" />
         </div>
       )}
 
-      {/* Floating Pump Icon */}
-      <div className="absolute top-6 right-6 w-14 h-14 rounded-full bg-gradient-to-br from-white/30 to-white/10 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-        <Fuel className={cn("h-7 w-7", statusConfig.iconColor)} />
+      {/* Floating Pump Icon with Glow */}
+      <div className="absolute top-6 right-6 w-14 h-14 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ring-2 ring-blue-300/30">
+        <Fuel className="h-7 w-7 text-blue-600 drop-shadow-sm" />
+        {pump.status === 'active' && (
+          <div className="absolute inset-0 rounded-full bg-blue-400/20 animate-ping"></div>
+        )}
       </div>
 
       <div className="relative p-8 space-y-6">
@@ -111,18 +147,18 @@ export function FuelPumpCard({ pump, onViewNozzles, onDelete, needsAttention }: 
         <div className="space-y-3">
           <div className="flex items-start justify-between pr-16">
             <div className="space-y-2 flex-1 min-w-0">
-              <h3 className="font-bold text-2xl text-white dark:text-white truncate">
+              <h3 className="font-bold text-2xl text-gray-800 truncate group-hover:text-blue-700 transition-colors">
                 {pump.name}
               </h3>
               <div className="space-y-1">
                 {pump.serialNumber && (
-                  <p className="text-slate-300 dark:text-slate-300 flex items-center gap-2 text-sm">
+                  <p className="text-gray-600 flex items-center gap-2 text-sm">
                     <Hash className="h-3 w-3 flex-shrink-0" />
                     <span className="truncate font-mono">{pump.serialNumber}</span>
                   </p>
                 )}
                 {pump.stationName && (
-                  <p className="text-slate-400 dark:text-slate-400 text-xs truncate">
+                  <p className="text-gray-500 text-xs truncate">
                     @ {pump.stationName}
                   </p>
                 )}
@@ -131,11 +167,11 @@ export function FuelPumpCard({ pump, onViewNozzles, onDelete, needsAttention }: 
           </div>
           
           <div className={cn(
-            "inline-flex px-3 py-1 rounded-full border items-center gap-2 backdrop-blur-sm",
+            "inline-flex px-4 py-2 rounded-full border items-center gap-2 backdrop-blur-sm ring-1",
             statusConfig.bgColor
           )}>
-            <StatusIcon className={cn("w-3 h-3", statusConfig.iconColor)} />
-            <span className={cn("text-xs font-semibold", statusConfig.iconColor)}>
+            <StatusIcon className={cn("w-4 h-4", statusConfig.iconColor)} />
+            <span className={cn("text-sm font-semibold", statusConfig.textColor)}>
               {statusConfig.label}
             </span>
           </div>
@@ -143,45 +179,45 @@ export function FuelPumpCard({ pump, onViewNozzles, onDelete, needsAttention }: 
 
         {/* 3D Pump Visualization */}
         <div className="relative">
-          <div className="bg-gradient-to-b from-slate-700/60 to-slate-800/60 dark:from-slate-800/60 dark:to-slate-900/60 rounded-2xl p-6 border border-white/20 dark:border-white/20 backdrop-blur-sm">
+          <div className="bg-gradient-to-b from-gray-100/80 to-gray-200/80 rounded-2xl p-6 border border-gray-200/60 backdrop-blur-sm shadow-inner">
             <div className="flex items-center justify-center">
               <div className="relative">
-                {/* Main Pump Body */}
+                {/* Main Pump Body with Enhanced Styling */}
                 <div className={cn(
-                  "w-24 h-32 rounded-2xl shadow-xl border relative overflow-hidden",
-                  "bg-gradient-to-b from-slate-600 to-slate-700 dark:from-slate-700 dark:to-slate-800",
-                  "border-slate-500 dark:border-slate-600"
+                  "w-24 h-32 rounded-2xl shadow-2xl border relative overflow-hidden",
+                  "bg-gradient-to-b from-gray-300 to-gray-500",
+                  "border-gray-400/60"
                 )}>
                   {/* Digital Display */}
-                  <div className="absolute top-4 left-2 right-2 h-10 bg-black rounded-lg border border-slate-400 flex items-center justify-center overflow-hidden">
+                  <div className="absolute top-4 left-2 right-2 h-10 bg-gray-800 rounded-lg border border-blue-400/60 flex items-center justify-center overflow-hidden shadow-inner">
                     <div className="text-center">
                       <div className={cn(
                         "text-xs font-mono font-bold",
-                        pump.status === 'active' ? "text-green-400 animate-pulse" : 
+                        pump.status === 'active' ? "text-blue-400 animate-pulse" : 
                         pump.status === 'maintenance' ? "text-amber-400" : "text-red-400"
                       )}>
                         {pump.name.slice(0, 8)}
                       </div>
-                      <div className="text-[8px] text-gray-500 mt-0.5">
+                      <div className="text-[8px] text-gray-400 mt-0.5">
                         {pump.status.toUpperCase()}
                       </div>
                     </div>
                   </div>
                   
-                  {/* Status Light */}
+                  {/* Enhanced Status Light */}
                   <div className={cn(
-                    "absolute top-16 right-2 w-3 h-3 rounded-full border-2 border-white/20",
-                    pump.status === 'active' ? "bg-emerald-400 animate-pulse shadow-emerald-400/50 shadow-lg" : 
-                    pump.status === 'maintenance' ? "bg-amber-400 shadow-amber-400/50 shadow-lg" : 
-                    "bg-red-400 shadow-red-400/50 shadow-lg"
+                    "absolute top-16 right-2 w-3 h-3 rounded-full border-2 border-white/50 shadow-lg",
+                    pump.status === 'active' ? "bg-emerald-500 animate-pulse shadow-emerald-300/80" : 
+                    pump.status === 'maintenance' ? "bg-amber-500 shadow-amber-300/80" : 
+                    "bg-red-500 shadow-red-300/80"
                   )} />
                   
-                  {/* Nozzle Connections */}
+                  {/* Enhanced Nozzle Connections */}
                   <div className="absolute right-0 top-20 space-y-2">
                     {Array.from({ length: Math.min(pump.nozzleCount, 3) }, (_, i) => (
                       <div key={i} className="flex items-center">
-                        <div className="w-8 h-3 bg-gradient-to-r from-slate-500 to-slate-600 dark:from-slate-600 dark:to-slate-700 rounded-r-xl shadow-sm border border-slate-400" />
-                        <div className="w-6 h-2 bg-gradient-to-r from-slate-400 to-slate-500 dark:from-slate-500 dark:to-slate-600 rounded-r-full ml-1 shadow-sm" />
+                        <div className="w-8 h-3 bg-gradient-to-r from-gray-400 to-gray-600 rounded-r-xl shadow-md border border-gray-400/60" />
+                        <div className="w-6 h-2 bg-gradient-to-r from-blue-400/80 to-blue-500/80 rounded-r-full ml-1 shadow-sm" />
                       </div>
                     ))}
                   </div>
@@ -189,57 +225,57 @@ export function FuelPumpCard({ pump, onViewNozzles, onDelete, needsAttention }: 
                   {/* Animated Flow Lines (when active) */}
                   {pump.status === 'active' && (
                     <div className="absolute inset-0 pointer-events-none">
-                      <div className="absolute top-20 left-4 w-1 h-8 bg-gradient-to-b from-cyan-400/0 via-cyan-400/50 to-cyan-400/0 animate-pulse"></div>
-                      <div className="absolute top-24 left-6 w-1 h-6 bg-gradient-to-b from-blue-400/0 via-blue-400/50 to-blue-400/0 animate-pulse delay-300"></div>
+                      <div className="absolute top-20 left-4 w-1 h-8 bg-gradient-to-b from-blue-400/0 via-blue-400/80 to-blue-400/0 animate-pulse"></div>
+                      <div className="absolute top-24 left-6 w-1 h-6 bg-gradient-to-b from-cyan-400/0 via-cyan-400/80 to-cyan-400/0 animate-pulse delay-300"></div>
                     </div>
                   )}
                 </div>
                 
-                {/* Base Platform */}
-                <div className="absolute -bottom-2 -left-2 -right-2 h-4 bg-gradient-to-b from-slate-500 to-slate-600 dark:from-slate-600 dark:to-slate-700 rounded-b-2xl shadow-xl border border-slate-400" />
+                {/* Enhanced Base Platform */}
+                <div className="absolute -bottom-2 -left-2 -right-2 h-4 bg-gradient-to-b from-gray-400 to-gray-600 rounded-b-2xl shadow-xl border border-gray-400/60" />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Stats Grid */}
+        {/* Enhanced Stats Grid */}
         <div className="grid grid-cols-2 gap-4">
-          <div className="bg-white/20 dark:bg-white/20 backdrop-blur-sm rounded-2xl p-4 border border-white/30 dark:border-white/30">
+          <div className="bg-blue-50/80 backdrop-blur-sm rounded-2xl p-4 border border-blue-200/60">
             <div className="flex items-center gap-3 mb-2">
-              <div className="p-2 rounded-xl bg-blue-500/30 dark:bg-blue-500/30">
-                <Droplets className="h-5 w-5 text-blue-400 dark:text-blue-400" />
+              <div className="p-2 rounded-xl bg-blue-500/20 ring-1 ring-blue-400/30">
+                <Droplets className="h-5 w-5 text-blue-600" />
               </div>
-              <span className="text-sm font-semibold text-slate-200 dark:text-slate-200">Nozzles</span>
+              <span className="text-sm font-semibold text-blue-700">Nozzles</span>
             </div>
-            <div className="text-2xl font-bold text-white dark:text-white">
+            <div className="text-2xl font-bold text-gray-800">
               {pump.nozzleCount}
             </div>
-            <div className="text-xs text-slate-400 dark:text-slate-400 mt-1">
+            <div className="text-xs text-gray-600 mt-1">
               Connected dispensers
             </div>
           </div>
           
-          <div className="bg-white/20 dark:bg-white/20 backdrop-blur-sm rounded-2xl p-4 border border-white/30 dark:border-white/30">
+          <div className="bg-purple-50/80 backdrop-blur-sm rounded-2xl p-4 border border-purple-200/60">
             <div className="flex items-center gap-3 mb-2">
-              <div className="p-2 rounded-xl bg-purple-500/30 dark:bg-purple-500/30">
-                <Gauge className="h-5 w-5 text-purple-400 dark:text-purple-400" />
+              <div className="p-2 rounded-xl bg-purple-500/20 ring-1 ring-purple-400/30">
+                <Gauge className="h-5 w-5 text-purple-600" />
               </div>
-              <span className="text-sm font-semibold text-slate-200 dark:text-slate-200 truncate">Status</span>
+              <span className="text-sm font-semibold text-purple-700 truncate">Status</span>
             </div>
-            <div className="text-lg font-bold text-white dark:text-white capitalize truncate">
+            <div className="text-lg font-bold text-gray-800 capitalize truncate">
               {pump.status}
             </div>
-            <div className="text-xs text-slate-400 dark:text-slate-400 mt-1 truncate">
+            <div className="text-xs text-gray-600 mt-1 truncate">
               Current state
             </div>
           </div>
         </div>
 
-        {/* Action Buttons */}
+        {/* Enhanced Action Buttons */}
         <div className="flex gap-3 pt-2">
           <Button 
             onClick={() => onViewNozzles(pump.id)}
-            className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
+            className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 ring-2 ring-blue-400/20 hover:ring-blue-300/40"
           >
             <Eye className="w-4 h-4 mr-2" />
             View Nozzles
@@ -247,7 +283,7 @@ export function FuelPumpCard({ pump, onViewNozzles, onDelete, needsAttention }: 
           <Button 
             onClick={() => onDelete(pump.id)}
             variant="outline"
-            className="bg-white/20 dark:bg-white/20 backdrop-blur-sm border-white/30 dark:border-white/30 text-white dark:text-white hover:bg-red-500/30 dark:hover:bg-red-500/30 hover:border-red-500/40 dark:hover:border-red-500/40 hover:text-red-200 dark:hover:text-red-200 rounded-xl transition-all duration-300"
+            className="bg-red-50/80 backdrop-blur-sm border-red-300/60 text-red-600 hover:bg-red-100/80 hover:border-red-400/70 hover:text-red-700 rounded-xl transition-all duration-300 ring-1 ring-red-300/20 hover:ring-red-400/40"
           >
             <Trash2 className="w-4 h-4" />
           </Button>

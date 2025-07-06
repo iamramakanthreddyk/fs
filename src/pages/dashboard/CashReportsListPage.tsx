@@ -1,3 +1,4 @@
+
 /**
  * @file pages/dashboard/CashReportsListPage.tsx
  * @description Page for viewing cash reports history
@@ -7,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useStations } from '@/hooks/api/useStations';
-import { useCashReports } from '@/hooks/api/useAttendant';
+import { useCashReports } from '@/hooks/useAttendant';
 import { format } from 'date-fns';
 import { ArrowLeft, RefreshCw, Loader2, DollarSign } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -95,10 +96,10 @@ export default function CashReportsListPage() {
                     <div className="flex items-center justify-between mb-2">
                       <div>
                         <h3 className="font-medium">
-                          {station?.name || 'Unknown Station'}
+                          {station?.name || report.stationName || 'Unknown Station'}
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          {format(new Date(report.date), 'MMMM d, yyyy')}
+                          {format(new Date(report.reportDate), 'MMMM d, yyyy')} - {report.shift || 'N/A'} shift
                         </p>
                       </div>
                       <Badge className={
@@ -116,8 +117,8 @@ export default function CashReportsListPage() {
                         <span className="ml-2 font-medium">₹{report.cashAmount.toFixed(2)}</span>
                       </div>
                       <div>
-                        <span className="text-sm text-muted-foreground">Credit Entries:</span>
-                        <span className="ml-2 font-medium">{report.creditEntries.length}</span>
+                        <span className="text-sm text-muted-foreground">Attendant:</span>
+                        <span className="ml-2 font-medium">{report.attendantName || 'N/A'}</span>
                       </div>
                       <div>
                         <span className="text-sm text-muted-foreground">Submitted:</span>
@@ -126,6 +127,13 @@ export default function CashReportsListPage() {
                         </span>
                       </div>
                     </div>
+                    
+                    {report.notes && (
+                      <div className="mb-2">
+                        <span className="text-sm text-muted-foreground">Notes:</span>
+                        <span className="ml-2 text-sm">{report.notes}</span>
+                      </div>
+                    )}
                     
                     <Button 
                       variant="outline" 

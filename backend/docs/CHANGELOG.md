@@ -2689,7 +2689,7 @@ Each entry is tied to a step from the implementation index.
 
 ### Files
 * `docs/openapi.yaml`
-* `docs/missing/COMPLETE_API_SPEC.yaml`
+* `docs/missing/COMPLETE_API_SPEC.yaml` (historical reference)
 * `src/controllers/fuelPrice.controller.ts`
 * `docs/STEP_fix_20251120.md`
 
@@ -3030,3 +3030,28 @@ Each entry is tied to a step from the implementation index.
 * `src/api/api-contract.ts`
 * `src/api/services/readingsService.ts`
 * `docs/STEP_fix_20260715_COMMAND.md`
+
+## [Fix 2026-07-16] – Azure deployment docs
+
+### 🟥 Fixes
+* Added missing Azure deployment and developer setup guides.
+* Linked the new guides from the README.
+* Updated the implementation index.
+
+### Files
+* `docs/AZURE_DEPLOYMENT_GUIDE.md`
+* `docs/AZURE_DEV_SETUP.md`
+* `README.md`
+* `docs/STEP_fix_20260716_COMMAND.md`
+
+## [Fix 2026-07-17] – Dashboard station access
+
+### 🟥 Fixes
+* Dashboard controller endpoints validate station access via `user_stations`.
+* Return 403 when access is denied.
+* Added unit tests for the new logic.
+
+### Files
+* `src/controllers/dashboard.controller.ts`
+* `tests/dashboard.controller.test.ts`
+* `docs/STEP_fix_20260717_COMMAND.md`
