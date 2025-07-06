@@ -3215,4 +3215,9 @@ Each entry is tied to a step from the implementation index.
 
 ### 🟥 Fixes
 - Added unit tests verifying fuel price overlap errors and automatic closure of open ranges.
+## [Fix 2026-07-22] – Remove duplicate backend brain doc
+
+### 🟥 Fixes
+- Deleted duplicate architecture file `docs/architecture/BACKEND_BRAIN.md`.
+- Updated architecture README link to `backend_brain.md`.
 - Documented in `STEP_fix_20260722_COMMAND.md`.

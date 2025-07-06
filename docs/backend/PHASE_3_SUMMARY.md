@@ -523,3 +523,13 @@ Integrated latest fuel prices widget on the Owner dashboard and fixed missing fi
 - Removed early return so the pumps page lists all pumps when opened from the sidebar.
 - Dropdown now includes an **All Stations** option and clears the query when selected.
 - Documented in `STEP_fix_20260721_COMMAND.md`.
+
+### 🛠️ Fix 2026-07-22 – Remove duplicate backend brain doc
+
+**Status:** ✅ Done
+**Files:** `docs/architecture/README.md`
+
+**Overview:**
+- Deleted duplicated `BACKEND_BRAIN.md` from the architecture docs.
+- Updated README link to point to `../backend_brain.md`.
+- Documented in `STEP_fix_20260722_COMMAND.md`.

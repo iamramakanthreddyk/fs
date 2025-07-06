@@ -359,4 +359,9 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - Unit tests for fuel price creation covering overlapping ranges and open range closure.
+## [Fix 2026-07-22] - Remove duplicate backend brain doc
+
+### Changed
+- Deleted `docs/architecture/BACKEND_BRAIN.md` which duplicated `docs/backend_brain.md`.
+- Updated architecture README link.
 - Documented in `STEP_fix_20260722_COMMAND.md`.
