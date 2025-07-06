@@ -262,3 +262,5 @@ This file tracks every build step taken by AI agents or developers. It maintains
 | fix | 2026-07-24 | Clarify attendant API limits | ✅ Done | `docs/journeys/ATTENDANT.md` | `docs/STEP_fix_20260724_COMMAND.md` |
 | fix | 2026-07-25 | Skip restricted attendant API calls | ✅ Done | `src/pages/dashboard/AttendantDashboardPage.tsx`, `src/pages/dashboard/NewReadingPage.tsx` | `docs/STEP_fix_20260725_COMMAND.md` |
 | fix | 2026-07-22 | Fuel price service tests | ✅ Done | `backend/tests/fuelPrice.service.test.ts` | `docs/STEP_fix_20260722_COMMAND.md` |
+| fix | 2026-07-24 | Mobile sidebar toggle | ✅ Done | `src/components/layout/*` | `docs/STEP_fix_20260724_COMMAND.md` |
+| fix | 2026-07-25 | SuperAdmin sidebar toggle | ✅ Done | `src/components/layout/Header.tsx` | `docs/STEP_fix_20260725_COMMAND.md` |

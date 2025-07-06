@@ -561,3 +561,22 @@ Integrated latest fuel prices widget on the Owner dashboard and fixed missing fi
 **Overview:**
 - Dashboard and new reading pages no longer issue requests to `/fuel-prices` or `/nozzle-readings` when the logged user is an attendant.
 - Documentation updated accordingly (`STEP_fix_20260725_COMMAND.md`).
+### 🛠️ Fix 2026-07-24 – Mobile sidebar toggle
+
+**Status:** ✅ Done
+**Files:** `src/components/layout/Header.tsx`, `src/components/layout/Sidebar.tsx`, `src/components/layout/DashboardLayout.tsx`
+
+**Overview:**
+- Hoisted sidebar open state to `DashboardLayout`.
+- Header hamburger button now opens the sidebar on mobile.
+- Documented in `STEP_fix_20260724_COMMAND.md`.
+
+### 🛠️ Fix 2026-07-25 – SuperAdmin sidebar toggle
+
+**Status:** ✅ Done
+**Files:** `src/components/layout/Header.tsx`
+
+**Overview:**
+- Header now toggles the `SidebarProvider` sidebar when no click handler is passed.
+- Ensures the hamburger menu works for SuperAdmin pages.
+- Documented in `STEP_fix_20260725_COMMAND.md`.

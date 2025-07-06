@@ -384,4 +384,14 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - Dashboard and reading pages no longer request `/fuel-prices` or `/nozzle-readings` when logged in as an attendant.
 - Documentation updated to describe attendant capabilities.
+## [Fix 2026-07-24] - Mobile sidebar toggle
+
+### Fixed
+- Hamburger menu in header now opens the sidebar on mobile by hoisting sidebar state to `DashboardLayout`.
+- Documented in `STEP_fix_20260724_COMMAND.md`.
+
+## [Fix 2026-07-25] - SuperAdmin sidebar toggle
+
+### Fixed
+- Header now falls back to `useSidebar` when no `onMobileMenuClick` prop is supplied, enabling the hamburger menu for SuperAdmin pages.
 - Documented in `STEP_fix_20260725_COMMAND.md`.
