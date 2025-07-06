@@ -259,4 +259,6 @@ This file tracks every build step taken by AI agents or developers. It maintains
 | fix | 2026-07-18 | Fuel price effective dates | ✅ Done | `backend/src/validators/fuelPrice.validator.ts`, `backend/src/controllers/fuelPrice.controller.ts`, `backend/src/services/fuelPrice.service.ts`, `src/api/api-contract.ts` | `docs/STEP_fix_20260718_COMMAND.md` |
 | fix | 2026-07-19 | Fuel price range override | ✅ Done | `backend/src/controllers/fuelPrice.controller.ts`, `backend/src/services/fuelPrice.service.ts` | `docs/STEP_fix_20260719_COMMAND.md` |
 | fix | 2026-07-23 | Attendant pages use role APIs | ✅ Done | `src/pages/dashboard/*` | `docs/STEP_fix_20260723_COMMAND.md` |
+| fix | 2026-07-24 | Clarify attendant API limits | ✅ Done | `docs/journeys/ATTENDANT.md` | `docs/STEP_fix_20260724_COMMAND.md` |
+| fix | 2026-07-25 | Skip restricted attendant API calls | ✅ Done | `src/pages/dashboard/AttendantDashboardPage.tsx`, `src/pages/dashboard/NewReadingPage.tsx` | `docs/STEP_fix_20260725_COMMAND.md` |
 | fix | 2026-07-22 | Fuel price service tests | ✅ Done | `backend/tests/fuelPrice.service.test.ts` | `docs/STEP_fix_20260722_COMMAND.md` |
